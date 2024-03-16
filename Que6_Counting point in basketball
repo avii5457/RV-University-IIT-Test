@@ -23,7 +23,8 @@ int countWays(int m)
     return dp[m];
 }
 
-int main() {
+int main() 
+{
     int n;
     printf("Enter the number of instances: ");
     scanf("%d", &n);

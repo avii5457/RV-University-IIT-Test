@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 // Function to calculate the number of distinct ways to accumulate points
-int countWays(int m) {
+int countWays(int m) 
+{
     int dp[m + 1];
     dp[0] = 1; // Base case: 1 way to score 0 points (empty sequence)
 
     // Fill dp[] in bottom-up manner
-    for (int i = 1; i <= m; i++) {
+    for (int i = 1; i <= m; i++) 
+    {
         dp[i] = 0;
 
         // For each possible score (1, 2, 3), accumulate the number of ways to reach the current score
@@ -16,7 +18,7 @@ int countWays(int m) {
             dp[i] += dp[i - 2];
         if (i >= 3)
             dp[i] += dp[i - 3];
-    }
+     }
 
     return dp[m];
 }
@@ -26,7 +28,8 @@ int main() {
     printf("Enter the number of instances: ");
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+   {
         int m;
         printf("Enter the number of points for instance %d: ", i + 1);
         scanf("%d", &m);
